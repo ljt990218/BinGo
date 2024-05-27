@@ -16,21 +16,16 @@ const request = axios.create({
   timeout: 5000, // 请求超时时间
 })
 
-export type RequestError = AxiosError<{
-  code?: string
-  data?: any
-}>
-
 // 异常拦截处理器
-function errorHandler(error: RequestError): Promise<any> {
+function errorHandler(error: any): Promise<any> {
   if (error.response) {
-    const { data = {}, status, statusText } = error.response
+    const { code, data = {} } = error.response
     // 403 无权限
-    if (status === 403)
-      window.$message.error((data && data.message) || statusText)
+    // if (status === 403)
+    //   window.$message.error((data && data.message) || statusText)
 
     // 401 未登录/未授权
-    if (status === 401 && data.result && data.result.isLogin)
+    if (code !== 0 && data.data)
       window.$message.error('Authorization verification failed')
     // 如果你需要直接跳转登录页面
     // location.replace(loginRoutePath)
