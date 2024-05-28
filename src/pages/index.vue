@@ -69,7 +69,7 @@ function openUrl(url: string) {
           </span>
         </div>
       </n-gi>
-      <n-gi>
+      <n-gi class="border">
         <div class="h-500 bg-black .dark:bg-white" />
       </n-gi>
       <n-gi>

@@ -33,13 +33,16 @@ const mode = computed(() => {
   return appStore.mode === 'dark'
 })
 function swithMode() {
+  toggleDark()
   appStore.swithMode(appStore.mode === 'dark' ? 'light' : 'dark')
 }
 </script>
 
 <template>
-  <transition name="fade" mode="out-in">
-    <div v-show="display" class="flex-center-center fixed left-50% top-20 h-60 max-w-1200 -translate-x-1/2">
+  <transition
+    name="fade" mode="out-in" class="duration-200"
+  >
+    <div v-show="display" class="flex-center-center fixed left-50% top-20 h-60 w-1700 -translate-x-1/2">
       <div
         v-for="item in topNavList" :key="item.id" class="mx-10 cursor-pointer text-24"
         :class="route.path === item.path ? 'text-blue' : ''" @click="$router.push(item.path)"
