@@ -39,7 +39,7 @@ function openUrl(url: string) {
 <template>
   <div class="pt-80 text-20">
     <n-grid x-gap="12" y-gap="12" :cols="2">
-      <n-gi class="min-h-300">
+      <n-gi class="min-h-300 border border-color-#eee">
         <!-- newsNav -->
         <div class="flex-start-center bg-blue-5 pl-10 text-white">
           <div class="flex-1">
@@ -69,14 +69,14 @@ function openUrl(url: string) {
           </span>
         </div>
       </n-gi>
-      <n-gi class="border">
-        <div class="h-500 bg-black .dark:bg-white" />
-      </n-gi>
       <n-gi>
-        <div class="h-500 bg-red" />
+        <div class="h-500 border border-color-#eee bg-white .dark:bg-white" />
       </n-gi>
-      <n-gi>
-        <div class="h-500 bg-blue" />
+      <n-gi class="border border-color-#eee">
+        <div class="h-500 bg-white" />
+      </n-gi>
+      <n-gi class="border border-color-#eee">
+        <div class="h-500 bg-white" />
       </n-gi>
     </n-grid>
   </div>
