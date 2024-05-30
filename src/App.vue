@@ -7,11 +7,11 @@ import useAutoThemeSwitcher from '@/hooks/useAutoThemeSwitcher'
 import { locale } from '@/utils/i18n'
 
 useHead({
-  title: 'Vue3 Naiveui PC',
+  title: 'Bin Go WeiQi--纵横网',
   meta: [
     {
       name: 'description',
-      content: 'Vue + Vite PC Starter Template',
+      content: 'Bin Go WeiQi--纵横网',
     },
     {
       name: 'theme-color',
