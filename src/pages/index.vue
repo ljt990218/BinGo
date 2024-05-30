@@ -37,11 +37,11 @@ function openUrl(url: string) {
 </script>
 
 <template>
-  <div class="pt-80 text-20">
+  <div class="pt-100 text-20">
     <n-grid x-gap="12" y-gap="12" :cols="2">
-      <n-gi class="min-h-300 border border-color-#eee">
+      <n-gi class="min-h-200 border border-color-#ccc rounded-8 pb-4 shadow-md">
         <!-- newsNav -->
-        <div class="flex-start-center bg-blue-5 pl-10 text-white">
+        <div class="flex-start-center rounded-t-8 bg-blue-5 pl-10 text-white">
           <div class="flex-1">
             {{ newsNav[0].name }}
           </div>
@@ -55,7 +55,7 @@ function openUrl(url: string) {
         <!-- news -->
         <div
           v-for=" item in binGoNews" :key="item.title"
-          class="flex-start-center mt-4 cursor-pointer pl-10 hover:bg-blue-400 hover:text-white"
+          class="flex-start-center mt-4 cursor-pointer pl-10 hover:text-blue-400"
           @click="openUrl(item.url)"
         >
           <span class="flex-1">
@@ -70,13 +70,13 @@ function openUrl(url: string) {
         </div>
       </n-gi>
       <n-gi>
-        <div class="h-500 border border-color-#eee bg-white .dark:bg-white" />
+        <div class="h-300 border border-color-#eee" />
       </n-gi>
       <n-gi class="border border-color-#eee">
-        <div class="h-500 bg-white" />
+        <div class="h-300" />
       </n-gi>
       <n-gi class="border border-color-#eee">
-        <div class="h-500 bg-white" />
+        <div class="h-300" />
       </n-gi>
     </n-grid>
   </div>

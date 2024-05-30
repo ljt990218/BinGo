@@ -39,27 +39,28 @@ function swithMode() {
 </script>
 
 <template>
-  <transition
-    name="fade" mode="out-in" class="duration-200"
-  >
-    <div v-show="display" class="flex-center-center fixed left-50% h-60 w-1700 bg-white pb-20 pt-20 shadow -translate-x-1/2">
+  <transition name="fade" mode="out-in" class="mt-10 duration-200">
+    <div
+      v-show="display"
+      class="flex-center-center fixed left-50% h-60 w-1700 rounded-8 bg-white py-20 shadow-lg -translate-x-1/2 .dark:bg-black"
+    >
       <div
-        v-for="item in topNavList" :key="item.id" class="mx-10 cursor-pointer text-22"
+        v-for="item in topNavList" :key="item.id" class="relative mx-10 cursor-pointer text-22"
         :class="route.path === item.path ? 'text-blue-5' : ''" @click="$router.push(item.path)"
       >
         {{ item.name }}
       </div>
+
+      <div class="absolute right-20 top-20">
+        <n-switch v-model:value="mode" size="large" @update:value="swithMode">
+          <template #checked-icon>
+            <div class="i-carbon:light h-1em w-1em" />
+          </template>
+          <template #unchecked-icon>
+            <div class="i-carbon:moon h-1em w-1em" />
+          </template>
+        </n-switch>
+      </div>
     </div>
   </transition>
-
-  <div class="fixed right-20 top-20">
-    <n-switch v-model:value="mode" size="large" @update:value="swithMode">
-      <template #checked-icon>
-        <div class="i-carbon:light h-1em w-1em" />
-      </template>
-      <template #unchecked-icon>
-        <div class="i-carbon:moon h-1em w-1em" />
-      </template>
-    </n-switch>
-  </div>
 </template>
